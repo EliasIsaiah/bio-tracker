@@ -8,7 +8,7 @@ Using carnivorous Sundew plants and Sphagnum to improve air quality on the ISS a
 Sphagnum:
 
 ![Sphagnum](https://upload.wikimedia.org/wikipedia/commons/2/22/Sphagnum.flexuosum.jpg)
-### What are, and why, sundews and spagnham?
+### What are, and why, sundews and Sphagnum?
 Sundews are small, palm-size, carnivorous plants that trap and digest prey via mucilaginous glands that cover their leaf surfaces. Sphagnum is a type of moss, otherwise known as peat moss, that absorbs many times its weight in water and can develop anaerobic soil conditions. Both are crucial parts of wetland ecosystems, but may pose as an interesting tool in combating air quality issues when used together. Poor air quality is a threat to sustaining life on earth and expanding our existence off planet and has been shown to trigger asthma and diabetes. 
 
 One aspect that decreases air quality is dust, which is largely composed of dead skin flakes.
@@ -38,8 +38,7 @@ Vue is chosen for its ease of use and rapid development.
 UI Mockup:
 ![UI PoC](https://images-images-images.s3.amazonaws.com/rough_ui.gif)
 
-### Link to Project Presentation: 
-[Presentation](https://docs.google.com/presentation/d/1LubCbh_YUnwEIIW3Us12WvGsC8I_FJMp206XBMlX57k/edit?usp=sharing)
+### [Link to Project Presentation](https://docs.google.com/presentation/d/1LubCbh_YUnwEIIW3Us12WvGsC8I_FJMp206XBMlX57k/edit?usp=sharing) 
 
 ### References
 1. B. Duncan, "Particulate Matter," Air Quality Observations from NASA, 10 July 2020. [Online]. Available: https://airquality.gsfc.nasa.gov/particulate-matter. [Accessed 03 Oct 2020].
