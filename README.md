@@ -2,6 +2,15 @@
 
 Tackling the `Sustain` Challenge
 
+### Team Sundew and Sphagnum ♥ :
+```
+* Cecilio Costilla
+* Catherine Darensbourg
+* Emily Green
+* Kiran Mankame
+* Elias Roussos
+```
+
 ### Objective
 Using carnivorous Sundew plants and Sphagnum to improve air quality on the ISS and future Space exploration missions 
 
