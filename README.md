@@ -25,15 +25,18 @@ Sundew:
 
 Technologies:
 * Database: Kintone
-Using Kintone a database can be quickly spun up with all of the different fields that are required for tracking the specimens’ status.
-The database can be queried by the client via Kintone’s RESTful API without much work done on the developer’s end, which is convenient.
+
+    Kintone databases can be quickly spun up with all of the different fields that are required for tracking the specimens’ status.
+    The database is accessed via Kintone’s convenient RESTful API.
 
 * Back End: Python (Django)
-Chosen for stability as Python is more stable than the other likely alternative Node.js
-Python is well supported in the scientific community, which will be a boon for integrating further features as the project grows
+
+    Python is more stable than the other likely alternative Node.js.
+    Python is also popular in the scientific community, which is the likely demographic for the application.
 
 * Front End: Vue.js
-Vue is chosen for its ease of use and rapid development.
+
+    Vue is chosen for its ease of use and rapid development cycle capabilities.
 
 UI Mockup:
 ![UI PoC](https://images-images-images.s3.amazonaws.com/rough_ui.gif)
