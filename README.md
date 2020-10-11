@@ -17,7 +17,7 @@ Using carnivorous Sundew plants and Sphagnum to improve air quality on the ISS a
 Sphagnum:
 
 ![Sphagnum](https://upload.wikimedia.org/wikipedia/commons/2/22/Sphagnum.flexuosum.jpg)
-### What are, and why, sundews and Sphagnum?
+### What are, and why, Sundews and Sphagnum?
 Sundews are small, palm-size, carnivorous plants that trap and digest prey via mucilaginous glands that cover their leaf surfaces. Sphagnum is a type of moss, otherwise known as peat moss, that absorbs many times its weight in water and can develop anaerobic soil conditions. Both are crucial parts of wetland ecosystems, but may pose as an interesting tool in combating air quality issues when used together. Poor air quality is a threat to sustaining life on earth and expanding our existence off planet and has been shown to trigger asthma and diabetes. 
 
 One aspect that decreases air quality is dust, which is largely composed of dead skin flakes.
