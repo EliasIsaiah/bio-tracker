@@ -1,4 +1,4 @@
-## Bio-Tracker 🌎 🌱 📈
+![Bio-Tracker](https://images-images-images.s3.amazonaws.com/logo_size_invert.png)
 
 Tackling the `Sustain` Challenge
 
