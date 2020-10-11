@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Django and Vue.js</title>
+</head>
+
+<body class="bg-light">
+    <div class="bg-white container">
+        <div class="jumbotron">
+            <h1 class="display-4">Bio-Tracker 🌎 🌱 📈</h1>
+            <p class="lead">Track the progression of your specimens as they grow and respond to their environment</p>
+        </div>
+        <!-- Content -->
+        <div id="myapp">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <router-link class="nav-link text-primary" to="/">Go to Kintone Records</router-link>
+                    </li>
+                </ul>
+            </nav>
+            <br>
+            <router-view></router-view>
+        </div>
+    </div>
+
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router"></script>
+    <script src="https://unpkg.com/vuex"></script>
+
+    <!-- Vue templates -->
+
+
+    <template id="kintone-list-template">
+        <div class="kintone-list">
+            <h2>Specimen Records</h2>
+            <kintone-record v-for="record in kintoneData" v-bind:key="record.id" v-bind:name="record.name"
+                v-bind:image="record.image" v-bind:temperature="record.temperature" v-bind:humidity="record.humidity"
+                v-bind:id="record.id">
+            </kintone-record>
+        </div>
+    </template>
+
+    <template id="kintone-record-template">
+        <div class="kintone-record">
+            <span v-if="$route.params.id">
+                <h3>
+                    <router-link v-bind:to="'/kintone/' + $route.params.id + '/'"
+                        v-html="$store.getters.getKintoneRecordById($route.params.id)['name']"></router-link>
+                </h3>
+                (id: [[ $route.params.id ]])
+                <img :src="$store.getters.getKintoneRecordById($route.params.id)['image']" style="display:block"/>
+                <div>Temperature: <span v-html="$store.getters.getKintoneRecordById($route.params.id)['temperature']"></span></div>
+                <div>Humidity: <span v-html="$store.getters.getKintoneRecordById($route.params.id)['humidity']"></span></div>
+            </span>
+            <span v-else>
+                <h3>
+                    <router-link v-bind:to="'/kintone/' + id + '/'" v-html="name"></router-link>
+                </h3>
+                <img :src="image" />
+                <p>id: [[ id ]]</p>
+                <p>Temperature: [[ temperature ]]</p>
+                <p>Humidity: [[ humidity ]]</p>
+                <hr>
+            </span>
+        </div>
+    </template>
+
+    <!-- Vue app -->
+    <script>
+        // store
+        const store = new Vuex.Store({
+            state: {
+                kintoneData: [
+                    {% for record in kintoneData.records %}
+                    {
+                        id : '{{ record.Record_number.value }}',
+                        name: '{{ record.specimen_name.value }}',
+                        image: '{{ record.image.value }}',
+                        temperature: '{{ record.temperature.value }}',
+                        humidity: '{{ record.humidity.value }}',
+                    },
+                    {% endfor %}
+                ],
+            },
+        getters: {
+                    getKintoneRecordById: (state) => (id) => {
+                        return state.kintoneData.find(record => record.id = id)
+                    },
+            }
+        })
+
+        // components
+        KintoneList = Vue.component('kintone-list', {
+            data: function () { return { kintoneData: store.state.kintoneData } },
+            template: '#kintone-list-template',
+        });
+
+        KintoneRecord = Vue.component('kintone-record', {
+            delimiters: ['[[', ']]'],
+            props: ['id', 'name', 'image', 'temperature', 'humidity'],
+            template: '#kintone-record-template',
+        })
+
+        // router
+        const routes = [
+            { component: KintoneList, path: '', },
+            { component: KintoneRecord, path: '/kintone/:id/', },
+        ]
+
+        const router = new VueRouter({
+            mode: 'history',
+            routes: routes,
+        })
+
+        // app
+        const myapp = new Vue({
+            router,
+            store,
+        }).$mount('#myapp');
+
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
