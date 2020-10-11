@@ -38,6 +38,9 @@ Vue is chosen for its ease of use and rapid development.
 UI Mockup:
 ![UI PoC](https://images-images-images.s3.amazonaws.com/rough_ui.gif)
 
+### Link to Project Presentation: 
+[Presentation](https://docs.google.com/presentation/d/1LubCbh_YUnwEIIW3Us12WvGsC8I_FJMp206XBMlX57k/edit?usp=sharing)
+
 ### References
 1. B. Duncan, "Particulate Matter," Air Quality Observations from NASA, 10 July 2020. [Online]. Available: https://airquality.gsfc.nasa.gov/particulate-matter. [Accessed 03 Oct 2020].
 2. NASA, "Closing the Loop: Recycling Water and Air in Space," p. 7.
