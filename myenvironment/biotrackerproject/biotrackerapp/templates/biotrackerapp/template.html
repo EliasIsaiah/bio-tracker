@@ -21,7 +21,7 @@
         </div>
         <!-- Content -->
         <div id="myapp">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav v-if="$route.params.id" class="navbar navbar-expand-lg navbar-light bg-light">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <router-link class="nav-link text-primary" to="/">Go to Kintone Records</router-link>
@@ -44,6 +44,7 @@
     <template id="kintone-list-template">
         <div class="kintone-list">
             <h2>Specimen Records</h2>
+            <hr>
             <kintone-record v-for="record in kintoneData" v-bind:key="record.id" v-bind:name="record.name"
                 v-bind:image="record.image" v-bind:temperature="record.temperature" v-bind:humidity="record.humidity"
                 v-bind:id="record.id">
